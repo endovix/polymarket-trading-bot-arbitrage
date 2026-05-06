@@ -72,6 +72,8 @@ Logged actions use **`V53_P0` … `V53_P4`**.
 - **Base size** is jittered slightly for camouflage, then scaled by **tier**.
 - For each tier: compute a limit buy price stepping down from the ask, skip prices that are too low, respect the risk cap per tier, acquire the in-flight lock for that price, place the buy. Tier size grows with tier index.
 
+After any placement, record wall-clock time for the cooldown.
+
 ---
 
 ## VI. State (`BotState`)
